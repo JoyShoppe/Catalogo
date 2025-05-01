@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JoyShop</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,18 +15,18 @@
   <header class="flex justify-between items-center p-4 bg-slate-800 text-white sticky top-0 z-40 shadow-md">
     <div class="flex items-center gap-2">
       <div class="logo-pulse bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
-        <span class="text-slate-800 font-bold text-xl">J</span>
+        <img src="img/Logo.png" alt="">
       </div>
       <h1 class="text-2xl font-bold">JoyShop</h1>
     </div>
     <div class="flex items-center gap-4">
       <div class="hidden md:flex">
         <a href="#blusas" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Blusas</a>
-        <a href="#pantalones" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Pantalones</a>
-        <a href="#zapatos" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Zapatos</a>
-        <a href="#accesorios" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Accesorios</a>
+        <a href="#pantalones" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Tops</a>
+        <a href="#zapatos" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Polos</a>
+        <a href="#accesorios" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Maquillaje</a>
       </div>
-      <a href="https://wa.me/51999999999" target="_blank" class="bg-white text-slate-800 px-4 py-2 rounded-full font-semibold hover:bg-slate-200 transition flex items-center gap-2 ripple">
+      <a href="https://wa.link/wuotuq" target="_blank" class="bg-white text-slate-800 px-4 py-2 rounded-full font-semibold hover:bg-slate-200 transition flex items-center gap-2 ripple">
         <i class="fab fa-whatsapp text-green-500"></i>
         <span>Contactar</span>
       </a>
@@ -33,96 +34,95 @@
     </div>
   </header>
 
-  <!-- MENÚ LATERAL -->
-  <nav id="side-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-4">
-    <div class="flex justify-between items-center mb-4 border-b pb-2">
-      <div class="flex items-center gap-2">
-        <div class="bg-slate-800 rounded-full p-1 w-8 h-8 flex items-center justify-center">
-          <span class="text-white font-bold text-sm">J</span>
-        </div>
-        <h2 class="text-xl font-bold text-slate-800">JoyShop</h2>
+<!-- MENÚ LATERAL -->
+<nav id="side-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-4">
+  <div class="flex justify-between items-center mb-4 border-b pb-2">
+    <div class="flex items-center gap-2">
+      <div class="bg-white	 rounded-full p-1 w-8 h-8 flex items-center justify-center">
+        <img src="img/Logo.png" alt="">
       </div>
-      <button id="close-menu" class="text-2xl font-bold text-gray-600 hover:text-slate-800">&times;</button>
+      <h2 class="text-xl font-bold text-slate-800">JoyShop</h2>
     </div>
-    <ul class="space-y-2">
-      <li class="hover:bg-slate-100 rounded-lg transition-all">
-        <a href="#blusas" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="blusas">
-          <i class="fas fa-tshirt mr-2"></i> Blusas
-        </a>
-      </li>
-      <li class="hover:bg-slate-100 rounded-lg transition-all">
-        <a href="#pantalones" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="pantalones">
-          <i class="fas fa-socks mr-2"></i> Pantalones  
-        </a>
-      </li>
-      <li class="hover:bg-slate-100 rounded-lg transition-all">
-        <a href="#zapatos" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="zapatos">
-          <i class="fas fa-shoe-prints mr-2"></i> Zapatos
-        </a>
-      </li>
-      <li class="hover:bg-slate-100 rounded-lg transition-all">
-        <a href="#accesorios" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="accesorios">
-          <i class="fas fa-gem mr-2"></i> Accesorios
-        </a>
-      </li>
-    </ul>
-    
-    <div class="mt-8 pt-4 border-t">
-      <h3 class="font-semibold mb-2">Síguenos</h3>
-      <div class="flex gap-4 justify-center">
-        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-tiktok"></i></a>
-      </div>
+    <button id="close-menu" class="text-2xl font-bold text-gray-600 hover:text-slate-800">&times;</button>
+  </div>
+  <ul class="space-y-2">
+    <li class="hover:bg-slate-100 rounded-lg transition-all">
+      <a href="#blusas" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+        <i class="fas fa-shirt mr-2"></i> Blusas
+      </a>
+    </li>
+    <li class="hover:bg-slate-100 rounded-lg transition-all">
+      <a href="#pantalones" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+        <i class="ri-t-shirt-fill mr-2"></i> Tops
+      </a>
+    </li>
+    <li class="hover:bg-slate-100 rounded-lg transition-all">
+      <a href="#zapatos" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+        <i class="fas ri-shirt-fill mr-2"></i> Polos
+      </a>
+    </li>
+    <li class="hover:bg-slate-100 rounded-lg transition-all">
+      <a href="#accesorios" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+        <i class="fas fa-paint-brush mr-2"></i> Maquillaje
+      </a>
+    </li>
+  </ul>
+
+  <div class="mt-8 pt-4 border-t">
+    <h3 class="font-semibold mb-2">Síguenos</h3>
+    <div class="flex gap-4 justify-center">
+      <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-tiktok"></i></a>
     </div>
-  </nav>
-  <br>
-  <!-- CATEGORÍAS COMPACTAS -->
-  <section class="p-4 md:p-8 bg-white">
-    <h2 class="text-xl font-bold mb-4 flex items-center">
-      <i class="fas fa-th-large mr-2 text-slate-600"></i> Categorías
-    </h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="blusas">
-        <div class="flex items-center gap-3">
-          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-            <i class="fas fa-tshirt text-slate-700 text-xl"></i>
-          </div>
-          <h3 class="text-sm font-semibold text-slate-800">Blusas</h3>
+  </div>
+</nav>
+
+<!-- CATEGORÍAS COMPACTAS -->
+<section class="p-4 md:p-8 bg-white">
+  <h2 class="text-xl font-bold mb-4 flex items-center">
+    <i class="fas fa-th-large mr-2 text-slate-600"></i> Categorías
+  </h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
+      <div class="flex items-center gap-3">
+        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+          <i class="fas fa-shirt text-slate-700 text-xl"></i>
         </div>
-      </div>
-      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="pantalones">
-        <div class="flex items-center gap-3">
-          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-            <i class="fas fa-socks text-slate-700 text-xl"></i>
-          </div>
-          <h3 class="text-sm font-semibold text-slate-800">Pantalones</h3>
-        </div>
-      </div>
-      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="zapatos">
-        <div class="flex items-center gap-3">
-          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-            <i class="fas fa-shoe-prints text-slate-700 text-xl"></i>
-          </div>
-          <h3 class="text-sm font-semibold text-slate-800">Zapatos</h3>
-        </div>
-      </div>
-      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="accesorios">
-        <div class="flex items-center gap-3">
-          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-            <i class="fas fa-gem text-slate-700 text-xl"></i>
-          </div>
-          <h3 class="text-sm font-semibold text-slate-800">Accesorios</h3>
-        </div>
+        <h3 class="text-sm font-semibold text-slate-800">Blusas</h3>
       </div>
     </div>
-  </section>
-  
+    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
+      <div class="flex items-center gap-3">
+        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+          <i class="fas ri-t-shirt-fill text-slate-700 text-xl"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-slate-800">Tops</h3>
+      </div>
+    </div>
+    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
+      <div class="flex items-center gap-3">
+        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+          <i class="fas ri-shirt-fill text-slate-700 text-xl"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-slate-800">Polos</h3>
+      </div>
+    </div>
+    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
+      <div class="flex items-center gap-3">
+        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+          <i class="fas fa-paint-brush text-slate-700 text-xl"></i>
+        </div>
+        <h3 class="text-sm font-semibold text-slate-800">Maquillaje</h3>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- CATÁLOGO -->
   <section class="p-4 md:p-8 category-section" id="blusas">
     <h2 class="text-xl font-bold mb-4 flex items-center">
-      <i class="fas fa-tshirt mr-2 text-slate-600"></i> Blusas
+      <i class="fas fa-tshirt mr-2 text-slate-600"></i> Todo
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="border rounded-lg p-4 card producto bg-white">
@@ -146,9 +146,12 @@
           <img src="img/Top Sin Mangas/Rojo.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
           <img src="img/Top Sin Mangas/Blanco.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
         </div>
-        <h3 class="text-lg font-semibold">Blusa Elegante</h3>
+        <h3 class="text-lg font-semibold">Top Aura</h3>
         <div class="flex justify-between items-center">
-          <p class="text-slate-800 font-bold">S/ 59.90</p>
+          <div>
+            <p class="text-slate-800 font-bold">S/ 29.90</p>
+            <p class="text-sm text-gray-500 line-through">S/ 59.90</p>
+          </div>
           <span class="text-yellow-400 text-sm">★★★★☆</span>
         </div>
         
@@ -168,30 +171,31 @@
               <div class="border-b border-slate-200 pb-2">
                 <div class="flex justify-between items-center">
                   <p class="text-yellow-400 text-xs">★★★★★</p>
-                  <span class="text-xs text-slate-500">hace 2 días</span>
+                  <span class="text-xs text-slate-500">en 1 de Mayo</span>
                 </div>
                 <div class="flex gap-2 mt-1">
                   <div class="w-16 flex-shrink-0 relative">
-                    <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
+                    <img src="img/Top Sin Mangas/Reseñas/Blanco.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
                   </div>
                   <div class="flex-grow">
-                    <p class="text-xs text-slate-600 line-clamp-2">"Me encantó esta blusa, el material es excelente y me quedó perfecta. Súper recomendada!"</p>
-                    <p class="text-xs font-semibold text-slate-700 mt-1">María G.</p>
+                    <p class="text-xs text-slate-600 line-clamp-3">Absolutamente divina, calidad, precio, talla.
+                      La tela super suave, cómoda, definitivamente la recomiendo..</p>
+                    <p class="text-xs font-semibold text-slate-700 mt-1">Me***ie</p>
                   </div>
                 </div>
               </div>
-              <div class="border-b border-slate-200 pb-2">
+              <div class="border-b border-slate-200 pb-3">
                 <div class="flex justify-between items-center">
                   <p class="text-yellow-400 text-xs">★★★★☆</p>
-                  <span class="text-xs text-slate-500">hace 1 semana</span>
+                  <span class="text-xs text-slate-500">en 28 de abril</span>
                 </div>
                 <div class="flex gap-2 mt-1">
                   <div class="w-16 flex-shrink-0 relative">
-                    <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
+                    <img src="img/Top Sin Mangas/Reseñas/Blanco2.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
                   </div>
                   <div class="flex-grow">
-                    <p class="text-xs text-slate-600 line-clamp-2">"La calidad es buena pero me esperaba un poco más de la tela. El color es exactamente como en la foto."</p>
-                    <p class="text-xs font-semibold text-slate-700 mt-1">Laura P.</p>
+                    <p class="text-xs text-slate-600 line-clamp-3">Súper lindaaaaa 10/10</p>
+                    <p class="text-xs font-semibold text-slate-700 mt-1">Esmeralda Gallegos</p>
                   </div>
                 </div>
               </div>
@@ -200,29 +204,31 @@
               <div>
                 <div class="flex justify-between items-center">
                   <p class="text-yellow-400 text-xs">★★★★★</p>
-                  <span class="text-xs text-slate-500">hace 2 semanas</span>
+                  <span class="text-xs text-slate-500">en 27 abr 2025</span>
                 </div>
                 <div class="flex gap-2 mt-1">
                   <div class="w-16 flex-shrink-0 relative">
-                    <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-3" />
+                    <img src="img/Top Sin Mangas/Reseñas/Rojo.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-3" />
                   </div>
                   <div class="flex-grow">
-                    <p class="text-xs text-slate-600 line-clamp-2">"La entrega fue rápida y la blusa es de muy buena calidad. Me queda perfecta con talla M."</p>
-                    <p class="text-xs font-semibold text-slate-700 mt-1">Carmen R.</p>
+                    <p class="text-xs text-slate-600 line-clamp-2">"Bueno, no es feo y se ve sexy en todas las formas de cuerpo😇❤️"</p>
+                    <p class="text-xs font-semibold text-slate-700 mt-1">Sarah Oriel</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
         <div class="mt-4">
           <p class="text-sm font-semibold text-gray-600">Talla:</p>
           <div class="flex gap-2 mt-2">
             <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">S</button>
             <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">M</button>
-            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">L</button>
+          
+            <!-- Talla L agotada, sin raya -->
+            <button class="size-button px-3 py-1 text-sm text-gray-500 bg-gray-100 border border-gray-300 rounded-md cursor-not-allowed opacity-60" disabled>L</button>
           </div>
+          
         </div>
         <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
         <div class="flex gap-2 mb-2">
@@ -230,10 +236,11 @@
           <span class="color-box color-option" style="background-color: #ffffff;"></span>
           <span class="color-box color-option" style="background-color: #6b0909;"></span> 
         </div>
-        <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Blusa%20Elegante" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
+        <a href="https://wa.link/52dozc" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
           <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
         </a>
       </div>
+      
     
       <!-- Segundo producto -->
       
@@ -354,7 +361,7 @@
 
     <!-- BOTÓN WHATSAPP FLOTANTE -->
     <div class="fixed bottom-6 right-6 z-30">
-        <a href="https://wa.me/51999999999" target="_blank" class="block bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300">
+        <a href="https://wa.link/wuotuq" target="_blank" class="block bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300">
         <i class="fab fa-whatsapp"></i>
         </a>
     </div>
