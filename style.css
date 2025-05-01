@@ -1,0 +1,270 @@
+/* Suavizar transiciones globales */
+* {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Botones */
+  button, a.button, .boton {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover, a.button:hover, .boton:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Sombra sutil para tarjetas de productos */
+  .card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  /* Hover para productos */
+  .producto:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(84, 105, 122, 0.2);
+  }
+  
+  /* Hover imágenes miniatura */
+  .thumb-img:hover {
+    border: 2px solid #475569;
+  }
+  
+  .thumb-img.active {
+    border: 2px solid #475569;
+    transform: scale(1.1);
+  }
+  
+  /* Reseñas carrusel */
+  .reseña {
+    transition: transform 0.3s ease;
+  }
+  .reseña:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Colores personalizables para cuadros */
+  .color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
+  
+  .color-box:hover {
+    transform: scale(1.2);
+  }
+  
+  .color-box.selected {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px #475569;
+  }
+  
+  /* Animación para el logo */
+  .logo-pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Categoría activa */
+  .category-active {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Banner flotante */
+  .floating-banner {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  /* Efecto de ondas en botones */
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+  }
+  
+  .ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+  }
+  
+  /* Botón de talla activo */
+  .size-button.active {
+    background-color: #475569;
+    color: white;
+    border-color: #475569;
+  }
+  
+  /* Animación de entrada para productos */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .producto {
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  /* Estilos para scroll snap */
+  .snap-x {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .snap-start {
+    scroll-snap-align: start;
+  }
+  
+  /* Scroll personalizado */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  
+  /* Mostrar botones de navegación solo cuando se hace hover en la imagen */
+  .producto .image-nav-buttons {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .producto:hover .image-nav-buttons {
+    opacity: 1;
+  }
+  
+  /* Animación para notificaciones */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .notification {
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  /* Estilo para cuando un producto se añade al carrito */
+  .added-to-cart {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .added-to-cart::before {
+    content: "✓ Añadido";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #10b981;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    z-index: 1;
+    transform: translateY(-100%);
+    animation: slideDown 0.5s forwards;
+  }
+  
+  @keyframes slideDown {
+    to {
+      transform: translateY(0);
+    }
+  }
+  /* Estilos para imágenes de reseñas */
+.review-img {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .review-img:hover, .review-img.review-img-hover {
+    transform: scale(1.05);
+    border-color: #475569;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  /* Añadir un indicador visual para señalar que es clickeable */
+  .review-img::after {
+    content: "\f00e"; /* Código de Font Awesome para lupa */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: rgba(71, 85, 105, 0.8);
+    color: white;
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .review-img:hover::after {
+    opacity: 1;
+  }
