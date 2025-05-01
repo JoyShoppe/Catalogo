@@ -1,296 +1,361 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JoyShop</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-    </head>
-    <body class="bg-gray-50 text-gray-800 font-sans">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JoyShop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- HEADER -->
-    <header class="flex justify-between items-center p-4 bg-slate-800 text-white sticky top-0 z-40 shadow-md">
-        <div class="flex items-center gap-2">
-        <div class="logo-pulse bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
-           <img src="img/Top Sin Mangas/" alt="">
+  <!-- HEADER -->
+  <header class="flex justify-between items-center p-4 bg-slate-800 text-white sticky top-0 z-40 shadow-md">
+    <div class="flex items-center gap-2">
+      <div class="logo-pulse bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
+        <span class="text-slate-800 font-bold text-xl">J</span>
+      </div>
+      <h1 class="text-2xl font-bold">JoyShop</h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <div class="hidden md:flex">
+        <a href="#blusas" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Blusas</a>
+        <a href="#pantalones" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Pantalones</a>
+        <a href="#zapatos" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Zapatos</a>
+        <a href="#accesorios" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Accesorios</a>
+      </div>
+      <a href="https://wa.me/51999999999" target="_blank" class="bg-white text-slate-800 px-4 py-2 rounded-full font-semibold hover:bg-slate-200 transition flex items-center gap-2 ripple">
+        <i class="fab fa-whatsapp text-green-500"></i>
+        <span>Contactar</span>
+      </a>
+      <button id="menu-btn" class="text-2xl hover:text-slate-300 md:hidden"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- MENÚ LATERAL -->
+  <nav id="side-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-4">
+    <div class="flex justify-between items-center mb-4 border-b pb-2">
+      <div class="flex items-center gap-2">
+        <div class="bg-slate-800 rounded-full p-1 w-8 h-8 flex items-center justify-center">
+          <span class="text-white font-bold text-sm">J</span>
         </div>
-        <h1 class="text-2xl font-bold">JoyShop</h1>
-        </div>
-        <div class="flex items-center gap-4">
-        <a href="https://wa.me/51999999999" target="_blank" class="bg-white text-slate-800 px-4 py-2 rounded-full font-semibold hover:bg-slate-200 transition flex items-center gap-2 ripple">
-            <i class="fab fa-whatsapp text-green-500"></i>
-            <span>Contactar</span>
+        <h2 class="text-xl font-bold text-slate-800">JoyShop</h2>
+      </div>
+      <button id="close-menu" class="text-2xl font-bold text-gray-600 hover:text-slate-800">&times;</button>
+    </div>
+    <ul class="space-y-2">
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#blusas" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="blusas">
+          <i class="fas fa-tshirt mr-2"></i> Blusas
         </a>
-        <button id="menu-btn" class="text-3xl hover:text-slate-300"><i class="fas fa-bars"></i></button>
+      </li>
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#pantalones" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="pantalones">
+          <i class="fas fa-socks mr-2"></i> Pantalones
+        </a>
+      </li>
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#zapatos" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="zapatos">
+          <i class="fas fa-shoe-prints mr-2"></i> Zapatos
+        </a>
+      </li>
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#accesorios" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="accesorios">
+          <i class="fas fa-gem mr-2"></i> Accesorios
+        </a>
+      </li>
+    </ul>
+    
+    <div class="mt-8 pt-4 border-t">
+      <h3 class="font-semibold mb-2">Síguenos</h3>
+      <div class="flex gap-4 justify-center">
+        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </nav>
+  <!-- CATEGORÍAS COMPACTAS -->
+  <section class="p-4 md:p-8 bg-white">
+    <h2 class="text-xl font-bold mb-4 flex items-center">
+      <i class="fas fa-th-large mr-2 text-slate-600"></i> Categorías
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="blusas">
+        <div class="flex items-center gap-3">
+          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+            <i class="fas fa-tshirt text-slate-700 text-xl"></i>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-800">Blusas</h3>
         </div>
-    </header>
+      </div>
+      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="pantalones">
+        <div class="flex items-center gap-3">
+          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+            <i class="fas fa-socks text-slate-700 text-xl"></i>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-800">Pantalones</h3>
+        </div>
+      </div>
+      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="zapatos">
+        <div class="flex items-center gap-3">
+          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+            <i class="fas fa-shoe-prints text-slate-700 text-xl"></i>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-800">Zapatos</h3>
+        </div>
+      </div>
+      <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card" data-category="accesorios">
+        <div class="flex items-center gap-3">
+          <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
+            <i class="fas fa-gem text-slate-700 text-xl"></i>
+          </div>
+          <h3 class="text-sm font-semibold text-slate-800">Accesorios</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- MENU LATERAL -->
-    <nav id="side-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-4">
-        <div class="flex justify-between items-center mb-4 border-b pb-2">
-        <div class="flex items-center gap-2">
-            <div class="bg-slate-800 rounded-full p-1 w-8 h-8 flex items-center justify-center">
-            <span class="text-white font-bold text-sm">E</span>
-            </div>
-            <h2 class="text-xl font-bold text-slate-800">Elegance</h2>
+  <!-- CATÁLOGO -->
+  <section class="p-4 md:p-8 category-section" id="blusas">
+    <h2 class="text-xl font-bold mb-4 flex items-center">
+      <i class="fas fa-tshirt mr-2 text-slate-600"></i> Blusas
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="border rounded-lg p-4 card producto bg-white">
+        <div class="relative product-image-container">
+          <span class="absolute top-2 right-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs">Nuevo</span>
+          <div class="image-container">
+            <img id="main-img-1" src="img/Top Sin Mangas/Blanco.png" alt="Blusa" class="w-full object-contain rounded mb-2 cursor-pointer zoomable product-image">
+          </div>
+          <!-- Botones de navegación de imagen -->
+          <div class="image-nav-buttons">
+            <button class="prev-image bg-white text-slate-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 absolute left-2 top-1/2 transform -translate-y-1/2 shadow-md">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-image bg-white text-slate-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 absolute right-2 top-1/2 transform -translate-y-1/2 shadow-md">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-        <button id="close-menu" class="text-2xl font-bold text-gray-600 hover:text-slate-800">&times;</button>
+        <div class="flex gap-2 mb-2 overflow-x-auto pb-2 thumbnails-container">
+          <img src="img/Top Sin Mangas/Negro.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
+          <img src="img/Top Sin Mangas/Rojo.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
+          <img src="img/Top Sin Mangas/Blanco.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
         </div>
-        <ul class="space-y-2">
-        <li class="hover:bg-slate-100 rounded-lg transition-all">
-            <a href="#blusas" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="blusas">
-            <i class="fas fa-tshirt mr-2"></i> Blusas
-            </a>
-        </li>
-        <li class="hover:bg-slate-100 rounded-lg transition-all">
-            <a href="#pantalones" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="pantalones">
-            <i class="fas fa-socks mr-2"></i> Pantalones
-            </a>
-        </li>
-        <li class="hover:bg-slate-100 rounded-lg transition-all">
-            <a href="#zapatos" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="zapatos">
-            <i class="fas fa-shoe-prints mr-2"></i> Zapatos
-            </a>
-        </li>
-        <li class="hover:bg-slate-100 rounded-lg transition-all">
-            <a href="#accesorios" class="block p-2 text-slate-700 hover:text-slate-900 menu-item" data-category="accesorios">
-            <i class="fas fa-gem mr-2"></i> Accesorios
-            </a>
-        </li>
-        </ul>
+        <h3 class="text-lg font-semibold">Blusa Elegante</h3>
+        <div class="flex justify-between items-center">
+          <p class="text-slate-800 font-bold">S/ 59.90</p>
+          <span class="text-yellow-400 text-sm">★★★★☆</span>
+        </div>
         
-        <div class="mt-8 pt-4 border-t">
-        <h3 class="font-semibold mb-2">Síguenos</h3>
-        <div class="flex gap-4 justify-center">
-            <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-tiktok"></i></a>
-        </div>
-        </div>
-    </nav>
-    <section class="p-4 md:p-8">
-        <h2 class="text-xl font-bold mb-4 flex items-center">
-        <i class="fas fa-th-large mr-2 text-slate-600"></i> Categorías
-        </h2>
-        <div class="flex gap-4 overflow-x-auto pb-4 snap-x">
-        <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-4 rounded-lg text-center hover:scale-105 transition-all duration-300 shadow-lg flex-shrink-0 w-28 category-card snap-start" data-category="blusas">
-            <div class="bg-white p-2 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-sm">
-            <i class="fas fa-tshirt text-slate-700 text-2xl"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-800">Blusas</h3>
-        </div>
-        <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-4 rounded-lg text-center hover:scale-105 transition-all duration-300 shadow-lg flex-shrink-0 w-28 category-card snap-start" data-category="pantalones">
-            <div class="bg-white p-2 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-sm">
-            <i class="fas fa-socks text-slate-700 text-2xl"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-800">Pantalones</h3>
-        </div>
-        <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-4 rounded-lg text-center hover:scale-105 transition-all duration-300 shadow-lg flex-shrink-0 w-28 category-card snap-start" data-category="zapatos">
-            <div class="bg-white p-2 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-sm">
-            <i class="fas fa-shoe-prints text-slate-700 text-2xl"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-800">Zapatos</h3>
-        </div>
-        <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-4 rounded-lg text-center hover:scale-105 transition-all duration-300 shadow-lg flex-shrink-0 w-28 category-card snap-start" data-category="accesorios">
-            <div class="bg-white p-2 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-sm">
-            <i class="fas fa-gem text-slate-700 text-2xl"></i>
-            </div>
-            <h3 class="text-sm font-semibold text-slate-800">Accesorios</h3>
-        </div>
-        </div>
-    </section>
-
-    <!-- CATÁLOGO -->
-    <section class="p-4 md:p-8 category-section" id="blusas">
-        <h2 class="text-xl font-bold mb-4 flex items-center">
-        <i class="fas fa-tshirt mr-2 text-slate-600"></i> Blusas
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="border rounded-lg p-4 card producto bg-white">
-                <div class="relative">
-                <span class="absolute top-2 right-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs">Nuevo</span>
-                <img id="main-img-1" src="img/Top Sin Mangas/Blanco.png" alt="Blusa" class="w-full h-64 object-cover rounded mb-2 cursor-pointer zoomable">
-                </div>
-                <div class="flex gap-2 mb-2 overflow-x-auto pb-2">
-                <img src="img/Top Sin Mangas/Negro.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
-                <img src="img/Top Sin Mangas/Rojo.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
-                <img src="img/Top Sin Mangas/Blanco.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
-                </div>
-                <h3 class="text-lg font-semibold">Blusa Elegante</h3>
+        <!-- Mini sección de reseñas específicas del producto -->
+        <div class="mt-3 mb-3 bg-slate-50 rounded-lg p-2">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-semibold text-slate-700 mb-1">Opiniones <span class="text-xs text-slate-500">(32)</span></h4>
+            <button class="text-xs text-slate-600 hover:text-slate-800 product-reviews-toggle">
+              Ver todas <i class="fas fa-chevron-down ml-1"></i>
+            </button>
+          </div>
+          
+          <!-- Reseñas del producto colapsables -->
+          <div class="product-reviews-content overflow-hidden" style="max-height: 0; transition: max-height 0.3s ease-out;">
+            <div class="space-y-2">
+              <!-- Mini reseña 1 con foto -->
+              <div class="border-b border-slate-200 pb-2">
                 <div class="flex justify-between items-center">
-                <p class="text-slate-800 font-bold">S/ 59.90</p>
-                <span class="text-yellow-400 text-sm">★★★★☆</span>
+                  <p class="text-yellow-400 text-xs">★★★★★</p>
+                  <span class="text-xs text-slate-500">hace 2 días</span>
                 </div>
-                
-                <!-- NUEVO: Mini sección de reseñas específicas del producto -->
-                <div class="mt-3 mb-3 bg-slate-50 rounded-lg p-2">
-                    <div class="flex items-center justify-between">
-                    <h4 class="text-sm font-semibold text-slate-700 mb-1">Opiniones <span class="text-xs text-slate-500">(32)</span></h4>
-                    <button class="text-xs text-slate-600 hover:text-slate-800 product-reviews-toggle">
-                        Ver todas <i class="fas fa-chevron-down ml-1"></i>
-                    </button>
-                    </div>
-                    
-                    <!-- Reseñas del producto colapsables -->
-                    <div class="product-reviews-content overflow-hidden" style="max-height: 0; transition: max-height 0.3s ease-out;">
-                    <div class="space-y-2">
-                        <!-- Mini reseña 1 con foto -->
-                        <div class="border-b border-slate-200 pb-2">
-                        <div class="flex justify-between items-center">
-                            <p class="text-yellow-400 text-xs">★★★★★</p>
-                            <span class="text-xs text-slate-500">hace 2 días</span>
-                        </div>
-                        <div class="flex gap-2 mt-1">
-                            <div class="w-16 flex-shrink-0">
-                            <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
-                            </div>
-                            <div class="flex-grow">
-                            <p class="text-xs text-slate-600 line-clamp-2">"Me encantó esta blusa, el material es excelente y me quedó perfecta. Súper recomendada!"</p>
-                            <p class="text-xs font-semibold text-slate-700 mt-1">María G.</p>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="border-b border-slate-200 pb-2">
-                        <div class="flex justify-between items-center">
-                            <p class="text-yellow-400 text-xs">★★★★☆</p>
-                            <span class="text-xs text-slate-500">hace 1 semana</span>
-                        </div>
-                        <div class="flex gap-2 mt-1">
-                            <div class="w-16 flex-shrink-0">
-                            <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
-                            </div>
-                            <div class="flex-grow">
-                            <p class="text-xs text-slate-600 line-clamp-2">"La calidad es buena pero me esperaba un poco más de la tela. El color es exactamente como en la foto."</p>
-                            <p class="text-xs font-semibold text-slate-700 mt-1">Laura P.</p>
-                            </div>
-                        </div>
-                        </div>
-                        
-                        <!-- Mini reseña 3 con foto -->
-                        <div>
-                        <div class="flex justify-between items-center">
-                            <p class="text-yellow-400 text-xs">★★★★★</p>
-                            <span class="text-xs text-slate-500">hace 2 semanas</span>
-                        </div>
-                        <div class="flex gap-2 mt-1">
-                            <div class="w-16 flex-shrink-0">
-                            <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-3" />
-                            </div>
-                            <div class="flex-grow">
-                            <p class="text-xs text-slate-600 line-clamp-2">"La entrega fue rápida y la blusa es de muy buena calidad. Me queda perfecta con talla M."</p>
-                            <p class="text-xs font-semibold text-slate-700 mt-1">Carmen R.</p>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
+                <div class="flex gap-2 mt-1">
+                  <div class="w-16 flex-shrink-0 relative">
+                    <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-xs text-slate-600 line-clamp-2">"Me encantó esta blusa, el material es excelente y me quedó perfecta. Súper recomendada!"</p>
+                    <p class="text-xs font-semibold text-slate-700 mt-1">María G.</p>
+                  </div>
                 </div>
-                
-                <div class="mt-4">
-                <p class="text-sm font-semibold text-gray-600">Talla:</p>
-                <div class="flex gap-2 mt-2">
-                    <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">S</button>
-                    <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">M</button>
-                    <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">L</button>
+              </div>
+              <div class="border-b border-slate-200 pb-2">
+                <div class="flex justify-between items-center">
+                  <p class="text-yellow-400 text-xs">★★★★☆</p>
+                  <span class="text-xs text-slate-500">hace 1 semana</span>
                 </div>
+                <div class="flex gap-2 mt-1">
+                  <div class="w-16 flex-shrink-0 relative">
+                    <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-xs text-slate-600 line-clamp-2">"La calidad es buena pero me esperaba un poco más de la tela. El color es exactamente como en la foto."</p>
+                    <p class="text-xs font-semibold text-slate-700 mt-1">Laura P.</p>
+                  </div>
                 </div>
-                <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
-                <div class="flex gap-2 mb-2">
-                <span class="color-box color-option" style="background-color: #000000;"></span>
-                <span class="color-box color-option" style="background-color: #ffffff;"></span>
-                <span class="color-box color-option" style="background-color: #6b0909;"></span> 
+              </div>
+              
+              <!-- Mini reseña 3 con foto -->
+              <div>
+                <div class="flex justify-between items-center">
+                  <p class="text-yellow-400 text-xs">★★★★★</p>
+                  <span class="text-xs text-slate-500">hace 2 semanas</span>
                 </div>
-                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Blusa%20Elegante" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
-                <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
-                </a>
+                <div class="flex gap-2 mt-1">
+                  <div class="w-16 flex-shrink-0 relative">
+                    <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-3" />
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-xs text-slate-600 line-clamp-2">"La entrega fue rápida y la blusa es de muy buena calidad. Me queda perfecta con talla M."</p>
+                    <p class="text-xs font-semibold text-slate-700 mt-1">Carmen R.</p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
         
-        <!-- Segundo producto -->
-        <div class="border rounded-lg p-4 card producto bg-white">
-            <div class="relative">
-            <span class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs">-20%</span>
-            <img id="main-img-2" src="img/images.jpeg" alt="Blusa" class="w-full h-64 object-cover rounded mb-2 cursor-pointer zoomable">
-            </div>
-            <div class="flex gap-2 mb-2 overflow-x-auto pb-2">
-            <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
-            <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
-            <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
-            </div>
-            <h3 class="text-lg font-semibold">Blusa Casual</h3>
-            <div class="flex justify-between items-center">
-            <div>
-                <p class="text-slate-800 font-bold">S/ 45.90</p>
-                <p class="text-sm text-gray-500 line-through">S/ 59.90</p>
-            </div>
-            <span class="text-yellow-400 text-sm">★★★★☆</span>
-            </div>
-            <div class="mt-4">
-            <p class="text-sm font-semibold text-gray-600">Talla:</p>
-            <div class="flex gap-2 mt-2">
-                <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">S</button>
-                <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">M</button>
-                <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">L</button>
-            </div>
-            </div>
-            <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
-            <div class="flex gap-2 mb-2">
-            <span class="color-box color-option" style="background-color: #f43f5e;"></span>
-            <span class="color-box color-option" style="background-color: #0ea5e9;"></span>
-            <span class="color-box color-option" style="background-color: #eab308;"></span>
-            </div>
-            <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Blusa%20Casual" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
-            <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
-            </a>
+        <div class="mt-4">
+          <p class="text-sm font-semibold text-gray-600">Talla:</p>
+          <div class="flex gap-2 mt-2">
+            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">S</button>
+            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">M</button>
+            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">L</button>
+          </div>
         </div>
+        <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
+        <div class="flex gap-2 mb-2">
+          <span class="color-box color-option" style="background-color: #000000;"></span>
+          <span class="color-box color-option" style="background-color: #ffffff;"></span>
+          <span class="color-box color-option" style="background-color: #6b0909;"></span> 
         </div>
-    </section>
+        <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Blusa%20Elegante" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
+          <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
+        </a>
+      </div>
+    
+      <!-- Segundo producto -->
+      <div class="border rounded-lg p-4 card producto bg-white">
+        <div class="relative product-image-container">
+          <span class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs">-20%</span>
+          <div class="image-container">
+            <img id="main-img-2" src="img/images.jpeg" alt="Blusa" class="w-full object-contain rounded mb-2 cursor-pointer zoomable product-image">
+          </div>
+          <!-- Botones de navegación de imagen -->
+          <div class="image-nav-buttons">
+            <button class="prev-image bg-white text-slate-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 absolute left-2 top-1/2 transform -translate-y-1/2 shadow-md">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-image bg-white text-slate-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 absolute right-2 top-1/2 transform -translate-y-1/2 shadow-md">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="flex gap-2 mb-2 overflow-x-auto pb-2 thumbnails-container">
+          <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
+          <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
+          <img src="img/images.jpeg" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
+        </div>
+        <h3 class="text-lg font-semibold">Blusa Casual</h3>
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-slate-800 font-bold">S/ 45.90</p>
+            <p class="text-sm text-gray-500 line-through">S/ 59.90</p>
+          </div>
+          <span class="text-yellow-400 text-sm">★★★★☆</span>
+        </div>
+        <div class="mt-4">
+          <p class="text-sm font-semibold text-gray-600">Talla:</p>
+          <div class="flex gap-2 mt-2">
+            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">S</button>
+            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">M</button>
+            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">L</button>
+          </div>
+        </div>
+        <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
+        <div class="flex gap-2 mb-2">
+          <span class="color-box color-option" style="background-color: #f43f5e;"></span>
+          <span class="color-box color-option" style="background-color: #0ea5e9;"></span>
+          <span class="color-box color-option" style="background-color: #eab308;"></span>
+        </div>
+        <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20la%20Blusa%20Casual" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
+          <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- RESEÑAS -->
-    <section class="p-4 md:p-8 mt-8 bg-slate-100 rounded-lg">
-        <h2 class="text-xl font-bold mb-4 flex items-center">
-        <i class="fas fa-comment-alt mr-2 text-slate-600"></i> Lo que opinan nuestros clientes
-        </h2>
-        <div class="flex overflow-x-auto space-x-4 pb-2 snap-x">
+  <!-- RESEÑAS -->
+  <section class="p-4 md:p-8 mt-8 bg-slate-100 rounded-lg">
+    <h2 class="text-xl font-bold mb-4 flex items-center">
+      <i class="fas fa-comment-alt mr-2 text-slate-600"></i> Lo que opinan nuestros clientes
+    </h2>
+    
+    <!-- Contenedor para las reseñas con controles de navegación -->
+    <div class="relative reviews-carousel">
+    
+      
+      <div class="flex overflow-x-auto space-x-4 pb-2 snap-x reviews-container">
         <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
-            <div class="flex gap-3 mb-2 items-center">
+          <div class="flex gap-3 mb-2 items-center">
             <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
-                AP
+              AP
             </div>
             <div>
-                <h4 class="font-semibold text-slate-800">Ana Pérez</h4>
-                <p class="text-yellow-400 text-sm">★★★★★</p>
+              <h4 class="font-semibold text-slate-800">Ana Pérez</h4>
+              <p class="text-yellow-400 text-sm">★★★★★</p>
             </div>
-            </div>
-            <p class="text-sm text-gray-600 mt-2">¡Me encantó la calidad de la blusa! El material es excelente y la entrega fue muy rápida. Definitivamente volveré a comprar.</p>
+          </div>
+          <p class="text-sm text-gray-600 mt-2">¡Me encantó la calidad de la blusa! El material es excelente y la entrega fue muy rápida. Definitivamente volveré a comprar.</p>
         </div>
         <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
-            <div class="flex gap-3 mb-2 items-center">
+          <div class="flex gap-3 mb-2 items-center">
             <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
-                LF
+              LF
             </div>
             <div>
-                <h4 class="font-semibold text-slate-800">Luisa Fernández</h4>
-                <p class="text-yellow-400 text-sm">★★★★★</p>
+              <h4 class="font-semibold text-slate-800">Luisa Fernández</h4>
+              <p class="text-yellow-400 text-sm">★★★★★</p>
             </div>
-            </div>
-            <p class="text-sm text-gray-600 mt-2">El envío fue rápido y el producto llegó tal como se ve en la foto. La talla fue perfecta siguiendo la guía que me enviaron. ¡Muy recomendado!</p>
+          </div>
+          <p class="text-sm text-gray-600 mt-2">El envío fue rápido y el producto llegó tal como se ve en la foto. La talla fue perfecta siguiendo la guía que me enviaron. ¡Muy recomendado!</p>
         </div>
         <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
-            <div class="flex gap-3 mb-2 items-center">
+          <div class="flex gap-3 mb-2 items-center">
             <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
-                MG
+              MG
             </div>
             <div>
-                <h4 class="font-semibold text-slate-800">María González</h4>
-                <p class="text-yellow-400 text-sm">★★★★☆</p>
+              <h4 class="font-semibold text-slate-800">María González</h4>
+              <p class="text-yellow-400 text-sm">★★★★☆</p>
             </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-2">Las blusas son hermosas y de buena calidad. La atención fue excelente. Solo le quito una estrella porque tardó un poco más de lo esperado en llegar.</p>
+        </div>
+        <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
+          <div class="flex gap-3 mb-2 items-center">
+            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
+              JR
             </div>
-            <p class="text-sm text-gray-600 mt-2">Las blusas son hermosas y de buena calidad. La atención fue excelente. Solo le quito una estrella porque tardó un poco más de lo esperado en llegar.</p>
+            <div>
+              <h4 class="font-semibold text-slate-800">Javier Rodríguez</h4>
+              <p class="text-yellow-400 text-sm">★★★★★</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-2">Compré un regalo para mi esposa y le encantó. La calidad es excelente y la atención personalizada fue genial.</p>
         </div>
-        </div>
-    </section>
+      </div>
+      
+      
+      
+      <!-- Indicadores de página -->
+      <div class="flex justify-center mt-4 space-x-2 reviews-indicators">
+        <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+        <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+        <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+        <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+      </div>
+    </div>
+  </section>
 
     <!-- FOOTER -->
     <footer class="bg-slate-900 text-white p-6 mt-8">
