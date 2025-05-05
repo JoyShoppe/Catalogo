@@ -1,390 +1,566 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JoyShop</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-  <!-- HEADER -->
-  <header class="flex justify-between items-center p-4 bg-slate-800 text-white sticky top-0 z-40 shadow-md">
-    <div class="flex items-center gap-2">
-      <div class="logo-pulse bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
-        <img src="img/Logo.png" alt="">
-      </div>
-      <h1 class="text-2xl font-bold">JoyShop</h1>
-    </div>
-    <div class="flex items-center gap-4">
-      <div class="hidden md:flex">
-        <a href="#blusas" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Blusas</a>
-        <a href="#pantalones" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Tops</a>
-        <a href="#zapatos" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Polos</a>
-        <a href="#accesorios" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Maquillaje</a>
-      </div>
-      <a href="https://wa.link/wuotuq" target="_blank" class="bg-white text-slate-800 px-4 py-2 rounded-full font-semibold hover:bg-slate-200 transition flex items-center gap-2 ripple">
-        <i class="fab fa-whatsapp text-green-500"></i>
-        <span>Contactar</span>
-      </a>
-      <button id="menu-btn" class="text-2xl hover:text-slate-300 md:hidden"><i class="fas fa-bars"></i></button>
-    </div>
-  </header>
-
-<!-- MENÚ LATERAL -->
-<nav id="side-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-4">
-  <div class="flex justify-between items-center mb-4 border-b pb-2">
-    <div class="flex items-center gap-2">
-      <div class="bg-white	 rounded-full p-1 w-8 h-8 flex items-center justify-center">
-        <img src="img/Logo.png" alt="">
-      </div>
-      <h2 class="text-xl font-bold text-slate-800">JoyShop</h2>
-    </div>
-    <button id="close-menu" class="text-2xl font-bold text-gray-600 hover:text-slate-800">&times;</button>
-  </div>
-  <ul class="space-y-2">
-    <li class="hover:bg-slate-100 rounded-lg transition-all">
-      <a href="#blusas" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
-        <i class="fas fa-shirt mr-2"></i> Blusas
-      </a>
-    </li>
-    <li class="hover:bg-slate-100 rounded-lg transition-all">
-      <a href="#pantalones" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
-        <i class="ri-t-shirt-fill mr-2"></i> Tops
-      </a>
-    </li>
-    <li class="hover:bg-slate-100 rounded-lg transition-all">
-      <a href="#zapatos" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
-        <i class="fas ri-shirt-fill mr-2"></i> Polos
-      </a>
-    </li>
-    <li class="hover:bg-slate-100 rounded-lg transition-all">
-      <a href="#accesorios" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
-        <i class="fas fa-paint-brush mr-2"></i> Maquillaje
-      </a>
-    </li>
-  </ul>
-
-  <div class="mt-8 pt-4 border-t">
-    <h3 class="font-semibold mb-2">Síguenos</h3>
-    <div class="flex gap-4 justify-center">
-      <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-facebook"></i></a>
-      <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </div>
-</nav>
-
-<!-- CATEGORÍAS COMPACTAS -->
-<section class="p-4 md:p-8 bg-white">
-  <h2 class="text-xl font-bold mb-4 flex items-center">
-    <i class="fas fa-th-large mr-2 text-slate-600"></i> Categorías
-  </h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
-      <div class="flex items-center gap-3">
-        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-          <i class="fas fa-shirt text-slate-700 text-xl"></i>
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JoyShop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <header class="flex justify-between items-center p-4 bg-slate-800 text-white sticky top-0 z-40 shadow-md">
+      <div class="flex items-center gap-2">
+        <div class="logo-pulse bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
+          <img src="img/Logo.png" alt="">
         </div>
-        <h3 class="text-sm font-semibold text-slate-800">Blusas</h3>
+        <h1 class="text-2xl font-bold">JoyShop</h1>
       </div>
-    </div>
-    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
-      <div class="flex items-center gap-3">
-        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-          <i class="fas ri-t-shirt-fill text-slate-700 text-xl"></i>
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex">
+          <a href="#blusas" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Blusas</a>
+          <a href="#pantalones" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Tops</a>
+          <a href="#zapatos" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Polos</a>
+          <a href="#accesorios" class="px-3 py-2 hover:bg-slate-700 rounded-md transition">Maquillaje</a>
         </div>
-        <h3 class="text-sm font-semibold text-slate-800">Tops</h3>
+        <a href="https://wa.link/wuotuq" target="_blank" class="bg-white text-slate-800 px-4 py-2 rounded-full font-semibold hover:bg-slate-200 transition flex items-center gap-2 ripple">
+          <i class="fab fa-whatsapp text-green-500"></i>
+          <span>Contactar</span>
+        </a>
+        <button id="menu-btn" class="text-2xl hover:text-slate-300 md:hidden"><i class="fas fa-bars"></i></button>
       </div>
-    </div>
-    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
-      <div class="flex items-center gap-3">
-        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-          <i class="fas ri-shirt-fill text-slate-700 text-xl"></i>
-        </div>
-        <h3 class="text-sm font-semibold text-slate-800">Polos</h3>
-      </div>
-    </div>
-    <div class="bg-gradient-to-r from-slate-100 to-slate-200 p-3 rounded-lg hover:scale-105 transition-all duration-300 shadow category-card">
-      <div class="flex items-center gap-3">
-        <div class="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center shadow-sm">
-          <i class="fas fa-paint-brush text-slate-700 text-xl"></i>
-        </div>
-        <h3 class="text-sm font-semibold text-slate-800">Maquillaje</h3>
-      </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-  <!-- CATÁLOGO -->
-  <section class="p-4 md:p-8 category-section" id="blusas">
-    <h2 class="text-xl font-bold mb-4 flex items-center">
-      <i class="fas fa-tshirt mr-2 text-slate-600"></i> Todo
+  <!-- MENÚ LATERAL -->
+  <nav id="side-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-4">
+    <div class="flex justify-between items-center mb-4 border-b pb-2">
+      <div class="flex items-center gap-2">
+        <div class="bg-white	 rounded-full p-1 w-8 h-8 flex items-center justify-center">
+          <img src="img/Logo.png" alt="">
+        </div>
+        <h2 class="text-xl font-bold text-slate-800">JoyShop</h2>
+      </div>
+      <button id="close-menu" class="text-2xl font-bold text-gray-600 hover:text-slate-800">&times;</button>
+    </div>
+    <ul class="space-y-2">
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#blusas" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+          <i class="fas fa-shirt mr-2"></i> Blusas
+        </a>
+      </li>
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#pantalones" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+          <i class="ri-t-shirt-fill mr-2"></i> Tops
+        </a>
+      </li>
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#zapatos" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+          <i class="fas ri-shirt-fill mr-2"></i> Polos
+        </a>
+      </li>
+      <li class="hover:bg-slate-100 rounded-lg transition-all">
+        <a href="#accesorios" class="block p-2 text-slate-700 hover:text-slate-900 menu-item">
+          <i class="fas fa-paint-brush mr-2"></i> Maquillaje
+        </a>
+      </li>
+    </ul>
+
+    <div class="mt-8 pt-4 border-t">
+      <h3 class="font-semibold mb-2">Síguenos</h3>
+      <div class="flex gap-4 justify-center">
+        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-slate-800 hover:text-slate-600 text-xl"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </nav>
+  <section class="p-4 md:p-8 bg-white">
+    <h2 class="text-xl font-bold mb-6 flex items-center">
+      <i class="fas fa-th-large mr-2 text-slate-600"></i> Categorías
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="border rounded-lg p-4 card producto bg-white">
-        <div class="relative product-image-container">
-          <span class="absolute top-2 right-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs">Nuevo</span>
-          <div class="image-container">
-            <img id="main-img-1" src="img/Top Sin Mangas/Blanco.png" alt="Blusa" class="w-full object-contain rounded mb-2 cursor-pointer zoomable product-image">
-          </div>
-          <!-- Botones de navegación de imagen -->
-          <div class="image-nav-buttons">
-            <button class="prev-image bg-white text-slate-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 absolute left-2 top-1/2 transform -translate-y-1/2 shadow-md">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="next-image bg-white text-slate-800 w-8 h-8 rounded-full flex items-center justify-center hover:bg-slate-200 absolute right-2 top-1/2 transform -translate-y-1/2 shadow-md">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
+    <div class="flex overflow-x-auto gap-4 md:gap-6 scrollbar-hide px-1">
+      <a href="#" class="category-item" data-category="blusas">
+        <div class="category-circle">
+          <i class="fas ri-store-line text-slate-700"></i>
         </div>
-        <div class="flex gap-2 mb-2 overflow-x-auto pb-2 thumbnails-container">
-          <img src="img/Top Sin Mangas/Negro.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
-          <img src="img/Top Sin Mangas/Rojo.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
-          <img src="img/Top Sin Mangas/Blanco.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
+        <h3 class="category-label">Todo</h3>
+      </a>
+      
+      <a href="https://www.twitch.tv/carola" class="category-item" data-category="pantalones">
+        <div class="category-circle">
+          <i class="fas ri-t-shirt-fill text-slate-700"></i>
         </div>
-        <h3 class="text-lg font-semibold">Top Aura</h3>
-        <div class="flex justify-between items-center">
-          <div>
-            <p class="text-slate-800 font-bold">S/ 29.90</p>
-            <p class="text-sm text-gray-500 line-through">S/ 59.90</p>
+        <h3 class="category-label">Tops</h3>
+      </a>
+      <a href="/categorias/polos" class="category-item" data-category="zapatos">
+        <div class="category-circle">
+          <i class="fas fa-tshirt text-slate-700"></i>
+        </div>
+        <h3 class="category-label">Blusas</h3>
+      </a>
+      <a href="/categorias/maquillaje" class="category-item" data-category="accesorios">
+        <div class="category-circle">
+          <i class="fas fa-paint-brush text-slate-700"></i>
+        </div>
+        <h3 class="category-label">Maquillaje</h3>
+      </a>
+    </div>
+  </section>
+
+    <!-- CATÁLOGO -->
+    <section class="p-4 md:p-8 category-section" id="blusas">
+      <h2 class="text-xl font-bold mb-4 flex items-center">
+        <i class="fas  ri-store-line mr-2 text-slate-600"></i> Todo
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Ejemplo de estructura modificada para un producto -->
+        <div class="border rounded-lg p-6 card producto bg-white">
+          <div class="relative product-image-container">
+            <span class="absolute top-2 right-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs">Nuevo</span>
+            <div class="image-container">
+              <img id="main-img-1" src="img/Top Sin Mangas/Blanco.png" alt="Blusa" class="w-full object-contain rounded mb-2 cursor-pointer zoomable product-image">
+            </div>
           </div>
-          <span class="text-yellow-400 text-sm">★★★★☆</span>
-        </div>
-        
-        <!-- Mini sección de reseñas específicas del producto -->
-        <div class="mt-3 mb-3 bg-slate-50 rounded-lg p-2">
-          <div class="flex items-center justify-between">
-            <h4 class="text-sm font-semibold text-slate-700 mb-1">Opiniones <span class="text-xs text-slate-500">(32)</span></h4>
-            <button class="text-xs text-slate-600 hover:text-slate-800 product-reviews-toggle">
-              Ver todas <i class="fas fa-chevron-down ml-1"></i>
-            </button>
+          <div class="flex gap-2 mb-2 overflow-x-auto pb-2 thumbnails-container">
+            <img src="img/Top Sin Mangas/Blanco.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
+            <img src="img/Top Sin Mangas/Negro.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
+            <img src="img/Top Sin Mangas/Rojo.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-1" />
+          </div>
+          <h3 class="text-lg font-semibold">Top Aura</h3>
+          <div class="flex justify-between items-center">
+            <div>
+              <p class="text-slate-800 font-bold">S/ 29.90</p>
+              <p class="text-sm text-gray-500 line-through">S/ 59.90</p>
+            </div>
+            <span class="text-yellow-400 text-sm">★★★★☆</span>
           </div>
           
-          <!-- Reseñas del producto colapsables -->
-          <div class="product-reviews-content overflow-hidden" style="max-height: 0; transition: max-height 0.3s ease-out;">
-            <div class="space-y-2">
-              <!-- Mini reseña 1 con foto -->
-              <div class="border-b border-slate-200 pb-2">
-                <div class="flex justify-between items-center">
-                  <p class="text-yellow-400 text-xs">★★★★★</p>
-                  <span class="text-xs text-slate-500">en 1 de Mayo</span>
-                </div>
-                <div class="flex gap-2 mt-1">
-                  <div class="w-16 flex-shrink-0 relative">
-                    <img src="img/Top Sin Mangas/Reseñas/Blanco.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
+          <!-- Botón Ver más -->
+          <button class="product-expand-btn w-full text-center mt-3 py-1 text-slate-700 border border-slate-200 rounded-md hover:bg-slate-50 transition">
+            Ver más <i class="fas fa-chevron-down"></i>
+          </button>
+          <!-- Todo el contenido que quieres ocultar va dentro de este div -->
+          <div class="product-details mt-3">
+            <!-- Mini sección de reseñas específicas del producto -->
+            <div class="mb-3 bg-slate-50 rounded-lg p-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-semibold text-slate-700 mb-1">Opiniones <span class="text-xs text-slate-500">(32)</span></h4>
+                <button class="text-xs text-slate-600 hover:text-slate-800 product-reviews-toggle">
+                  Ver todas <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+              </div>
+              
+              <!-- Reseñas del producto colapsables -->
+              <div class="product-reviews-content overflow-hidden" style="max-height: 100%; transition: max-height 0.3s ease-out;">
+                <div class="space-y-2">
+                  <!-- Mini reseña 1 con foto -->
+                  <div class="border-b border-slate-200 pb-2">
+                    <div class="flex justify-between items-center">
+                      <p class="text-yellow-400 text-xs">★★★★★</p>
+                      <span class="text-xs text-slate-500">en 1 de Mayo</span>
+                    </div>
+                    <div class="flex gap-2 mt-1">
+                      <div class="w-16 flex-shrink-0 relative">
+                        <img src="img/Top Sin Mangas/Reseñas/Blanco.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
+                      </div>
+                      <div class="flex-grow">
+                        <p class="text-xs text-slate-600 line-clamp-3">Absolutamente divina, calidad, precio, talla.
+                          La tela super suave, cómoda, definitivamente la recomiendo..</p>
+                        <p class="text-xs font-semibold text-slate-700 mt-1">Me***ie</p>
+                      </div>
+                    </div>
                   </div>
-                  <div class="flex-grow">
-                    <p class="text-xs text-slate-600 line-clamp-3">Absolutamente divina, calidad, precio, talla.
-                      La tela super suave, cómoda, definitivamente la recomiendo..</p>
-                    <p class="text-xs font-semibold text-slate-700 mt-1">Me***ie</p>
+                  
+                  <!-- Mini reseña 2 con foto -->
+                  <div class="border-b border-slate-200 pb-2">
+                    <div class="flex justify-between items-center">
+                      <p class="text-yellow-400 text-xs">★★★★☆</p>
+                      <span class="text-xs text-slate-500">en 28 de abril</span>
+                    </div>
+                    <div class="flex gap-2 mt-1">
+                      <div class="w-16 flex-shrink-0 relative">
+                        <img src="img/Top Sin Mangas/Reseñas/Blanco2.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
+                      </div>
+                      <div class="flex-grow">
+                        <p class="text-xs text-slate-600 line-clamp-3">Súper lindaaaaa 10/10</p>
+                        <p class="text-xs font-semibold text-slate-700 mt-1">Esmeralda Gallegos</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Mini reseña 3 con foto -->
+                  <div>
+                    <div class="flex justify-between items-center">
+                      <p class="text-yellow-400 text-xs">★★★★★</p>
+                      <span class="text-xs text-slate-500">en 27 abr 2025</span>
+                    </div>
+                    <div class="flex gap-2 mt-1">
+                      <div class="w-16 flex-shrink-0 relative">
+                        <img src="img/Top Sin Mangas/Reseñas/Rojo.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-3" />
+                      </div>
+                      <div class="flex-grow">
+                        <p class="text-xs text-slate-600 line-clamp-2">"Bueno, no es feo y se ve sexy en todas las formas de cuerpo😇❤️"</p>
+                        <p class="text-xs font-semibold text-slate-700 mt-1">Sarah Oriel</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="border-b border-slate-200 pb-3">
-                <div class="flex justify-between items-center">
-                  <p class="text-yellow-400 text-xs">★★★★☆</p>
-                  <span class="text-xs text-slate-500">en 28 de abril</span>
+            </div>
+            
+            <!-- Información de tallas -->
+            <div class="mt-4">
+              <p class="text-sm font-semibold text-gray-600">Talla:</p>
+              <div class="flex gap-2 mt-2">
+                <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">S</button>
+                <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">M</button>
+                <button class="size-button px-3 py-1 text-sm text-gray-500 bg-gray-100 border border-gray-300 rounded-md cursor-not-allowed opacity-60" disabled>L</button>
+              </div>
+            </div>
+            <br>
+            <!-- Información de colores -->
+            <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
+            <div class="flex gap-2 mb-2">
+              <span class="color-box color-option" style="background-color: #000000;"></span>
+              <span class="color-box color-option" style="background-color: #ffffff;"></span>
+              <span class="color-box color-option" style="background-color: #6b0909;"></span> 
+            </div>
+            <!-- Botón de WhatsApp -->
+            <a href="https://wa.link/52dozc" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
+              <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+  
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Ejemplo de estructura modificada para un producto -->
+          <div class="border rounded-lg p-6 card producto bg-white">
+            <div class="relative product-image-container">
+              <span class="absolute top-2 right-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs">Nuevo</span>
+              <div class="image-container">
+                <img id="main-img-2" src="img/Labial Hidratante Ice Mountain/Labial Hidratante Ice Mountain.png" alt="Blusa" class="w-full object-contain rounded mb-2 cursor-pointer zoomable product-image">
+              </div>
+            </div>
+            <div class="flex gap-2 mb-2 overflow-x-auto pb-2 thumbnails-container">
+              <img src="img/Labial Hidratante Ice Mountain/Labial Hidratante Ice Mountain.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
+              <img src="img/Labial Hidratante Ice Mountain/1.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
+              <img src="img/Labial Hidratante Ice Mountain/2.png" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-2" />
+            </div>
+            <h3 class="text-lg font-semibold">Labial Hidratante Ice Mountain</h3>
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="text-slate-800 font-bold">S/ 10.00</p>
+                <p class="text-sm text-gray-500 line-through">S/ 18.90</p>
+              </div>
+              <span class="text-yellow-400 text-sm">★★★★☆</span>
+            </div>
+            
+            <!-- Botón Ver más -->
+            <button class="product-expand-btn w-full text-center mt-3 py-1 text-slate-700 border border-slate-200 rounded-md hover:bg-slate-50 transition">
+              Ver más <i class="fas fa-chevron-down"></i>
+            </button>
+            <!-- Todo el contenido que quieres ocultar va dentro de este div -->
+            <div class="product-details mt-3">
+              <!-- Mini sección de reseñas específicas del producto -->
+              <div class="mb-3 bg-slate-50 rounded-lg p-2">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-semibold text-slate-700 mb-1">Opiniones <span class="text-xs text-slate-500">(32)</span></h4>
+                  <button class="text-xs text-slate-600 hover:text-slate-800 product-reviews-toggle">
+                    Ver todas <i class="fas fa-chevron-down ml-1"></i>
+                  </button>
                 </div>
-                <div class="flex gap-2 mt-1">
-                  <div class="w-16 flex-shrink-0 relative">
-                    <img src="img/Top Sin Mangas/Reseñas/Blanco2.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
-                  </div>
-                  <div class="flex-grow">
-                    <p class="text-xs text-slate-600 line-clamp-3">Súper lindaaaaa 10/10</p>
-                    <p class="text-xs font-semibold text-slate-700 mt-1">Esmeralda Gallegos</p>
+                
+                <!-- Reseñas del producto colapsables -->
+                <div class="product-reviews-content overflow-hidden" style="max-height: 100%; transition: max-height 0.3s ease-out;">
+                  <div class="space-y-2">
+                    <!-- Mini reseña 1 con foto -->
+                    <div class="border-b border-slate-200 pb-2">
+                      <div class="flex justify-between items-center">
+                        <p class="text-yellow-400 text-xs">★★★★★</p>
+                        <span class="text-xs text-slate-500">en 9 jul 2024                        </span>
+                      </div>
+                      <div class="flex gap-2 mt-1">
+                        <div class="w-16 flex-shrink-0 relative">
+                          <img src="img/Labial Hidratante Ice Mountain/Reseña/r2.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
+                        </div>
+                        <div class="flex-grow">
+                          <p class="text-xs text-slate-600 line-clamp-9">Me gusto mucho el labial pero es realmente naranja si aplicas mucho y no es para todas las colorimetrias, fuera de eso está super, me deja muy lindos los labios y dura alrededor de 2 horas y en esos momentos no se transfiere
+                            mucho pero traten de usar algún humectante que no sea vaselina o algo similar en caso de ser de día (te puede quemar los labios, a mis amigas y a mi nos paso). Con una tinta bien rojiza queda divino realmente. Me encantó.</p>
+                          <p class="text-xs font-semibold text-slate-700 mt-1">le***ez                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Mini reseña 2 con foto -->
+                    <div class="border-b border-slate-200 pb-2">
+                      <div class="flex justify-between items-center">
+                        <p class="text-yellow-400 text-xs">★★★★☆</p>
+                        <span class="text-xs text-slate-500">en 14 nov 2024</span>
+                      </div>
+                      <div class="flex gap-2 mt-1">
+                        <div class="w-16 flex-shrink-0 relative">
+                          <img src="img/Labial Hidratante Ice Mountain/Reseña/r1.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
+                        </div>
+                        <div class="flex-grow">
+                          <p class="text-xs text-slate-600 line-clamp-3">Me encanta!!! 😍                          </p>
+                          <p class="text-xs font-semibold text-slate-700 mt-1">Do***ro                          </p><br><br><br>
+                        </div>
+                      </div>
+                    </div>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                   </div>
                 </div>
               </div>
               
-              <!-- Mini reseña 3 con foto -->
-              <div>
-                <div class="flex justify-between items-center">
-                  <p class="text-yellow-400 text-xs">★★★★★</p>
-                  <span class="text-xs text-slate-500">en 27 abr 2025</span>
-                </div>
-                <div class="flex gap-2 mt-1">
-                  <div class="w-16 flex-shrink-0 relative">
-                    <img src="img/Top Sin Mangas/Reseñas/Rojo.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-3" />
-                  </div>
-                  <div class="flex-grow">
-                    <p class="text-xs text-slate-600 line-clamp-2">"Bueno, no es feo y se ve sexy en todas las formas de cuerpo😇❤️"</p>
-                    <p class="text-xs font-semibold text-slate-700 mt-1">Sarah Oriel</p>
-                  </div>
-                </div>
+       
+              <!-- Información de colores -->
+              <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
+              <div class="flex gap-2 mb-2">
+                <span class="color-box color-option" style="background-color: #bc5047;"></span>
+             
+              </div>
+              <!-- Botón de WhatsApp -->
+              <a href="https://wa.link/52dozc" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
+                <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
+              </a>
+            </div>
+          </div>
+    
+          <div class="border rounded-lg p-6 card producto bg-white">
+            <div class="relative product-image-container">
+              <span class="absolute top-2 right-2 bg-slate-800 text-white px-2 py-1 rounded-full text-xs">Nuevo</span>
+              <div class="image-container">
+                <img id="main-img-3" src="img/Base Líquida/0f103acd-61a3-4a5c-bdbc-fb81a11d7007.webp" alt="Blusa" class="w-full object-contain rounded mb-2 cursor-pointer zoomable product-image">
               </div>
             </div>
-          </div>
-        </div>
-        <div class="mt-4">
-          <p class="text-sm font-semibold text-gray-600">Talla:</p>
-          <div class="flex gap-2 mt-2">
-            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">S</button>
-            <button class="size-button px-3 py-1 text-sm text-gray-800 bg-transparent border border-gray-300 rounded-md hover:bg-slate-800 hover:text-white transition-all duration-300">M</button>
-          
-            <!-- Talla L agotada, sin raya -->
-            <button class="size-button px-3 py-1 text-sm text-gray-500 bg-gray-100 border border-gray-300 rounded-md cursor-not-allowed opacity-60" disabled>L</button>
-          </div>
-          
-        </div>
-        <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
-        <div class="flex gap-2 mb-2">
-          <span class="color-box color-option" style="background-color: #000000;"></span>
-          <span class="color-box color-option" style="background-color: #ffffff;"></span>
-          <span class="color-box color-option" style="background-color: #6b0909;"></span> 
-        </div>
-        <a href="https://wa.link/52dozc" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
-          <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
-        </a>
-      </div>
-      
-    
-      <!-- Segundo producto -->
-      
-    </div>
-  </section>
-
-  <!-- RESEÑAS -->
-  <section class="p-4 md:p-8 mt-8 bg-slate-100 rounded-lg">
-    <h2 class="text-xl font-bold mb-4 flex items-center">
-      <i class="fas fa-comment-alt mr-2 text-slate-600"></i> Lo que opinan nuestros clientes
-    </h2>
-    
-    <!-- Contenedor para las reseñas con controles de navegación -->
-    <div class="relative reviews-carousel">
-    
-      
-      <div class="flex overflow-x-auto space-x-4 pb-2 snap-x reviews-container">
-        <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
-          <div class="flex gap-3 mb-2 items-center">
-            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
-              AP
+            <div class="flex gap-2 mb-2 overflow-x-auto pb-2 thumbnails-container">
+              <img src="img/Base Líquida/0f103acd-61a3-4a5c-bdbc-fb81a11d7007.webp" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-3" />
+              <img src="img/Base Líquida/5ede5feb-0fb3-4607-bd78-6ee81b04943f.webp" class="w-16 h-16 object-cover cursor-pointer thumb-img rounded" data-target="main-img-3" />
+               </div>
+            <h3 class="text-lg font-semibold">Base Líquida PECOLOVERS Flawless</h3>
+            <div class="flex justify-between items-center">
+              <div>
+                <p class="text-slate-800 font-bold">S/ 11.90</p>
+                <p class="text-sm text-gray-500 line-through">S/ 22.90</p>
+              </div>
+              <span class="text-yellow-400 text-sm">★★★★☆</span>
             </div>
-            <div>
-              <h4 class="font-semibold text-slate-800">Ana Pérez</h4>
-              <p class="text-yellow-400 text-sm">★★★★★</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 mt-2">¡Me encantó la calidad de la blusa! El material es excelente y la entrega fue muy rápida. Definitivamente volveré a comprar.</p>
-        </div>
-        <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
-          <div class="flex gap-3 mb-2 items-center">
-            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
-              LF
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800">Luisa Fernández</h4>
-              <p class="text-yellow-400 text-sm">★★★★★</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 mt-2">El envío fue rápido y el producto llegó tal como se ve en la foto. La talla fue perfecta siguiendo la guía que me enviaron. ¡Muy recomendado!</p>
-        </div>
-        <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
-          <div class="flex gap-3 mb-2 items-center">
-            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
-              MG
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800">María González</h4>
-              <p class="text-yellow-400 text-sm">★★★★☆</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 mt-2">Las blusas son hermosas y de buena calidad. La atención fue excelente. Solo le quito una estrella porque tardó un poco más de lo esperado en llegar.</p>
-        </div>
-        <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
-          <div class="flex gap-3 mb-2 items-center">
-            <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
-              JR
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800">Javier Rodríguez</h4>
-              <p class="text-yellow-400 text-sm">★★★★★</p>
-            </div>
-          </div>
-          <p class="text-sm text-gray-600 mt-2">Compré un regalo para mi esposa y le encantó. La calidad es excelente y la atención personalizada fue genial.</p>
-        </div>
-      </div>
-      
-      
-      
-      <!-- Indicadores de página -->
-      <div class="flex justify-center mt-4 space-x-2 reviews-indicators">
-        <span class="w-2 h-2 rounded-full bg-slate-800"></span>
-        <span class="w-2 h-2 rounded-full bg-slate-300"></span>
-        <span class="w-2 h-2 rounded-full bg-slate-300"></span>
-        <span class="w-2 h-2 rounded-full bg-slate-300"></span>
-      </div>
-    </div>
-  </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-white p-6 mt-8">
-        <div class="container mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-6">
-            <div class="flex items-center gap-2 mb-4 md:mb-0">
-            <div class="bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
-                <span class="text-slate-800 font-bold text-xl">E</span>
-            </div>
-            <h2 class="text-xl font-bold">Elegance</h2>
-            </div>
-            <div class="flex gap-4">
-            <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
-            <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-facebook text-xl"></i></a>
-            <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-tiktok text-xl"></i></a>
-            <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-whatsapp text-xl"></i></a>
-            </div>
-        </div>
-        <div class="border-t border-slate-700 pt-4 text-center text-sm text-slate-400">
-            <p>&copy; 2025 Elegance - Todos los derechos reservados</p>
-        </div>
-        </div>
-    </footer>
-
-    <!-- MODAL DE IMAGEN -->
-    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
-        <div class="relative max-w-screen-lg">
-        <button id="modal-close" class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300">&times;</button>
-        <img id="modal-img" src="" class="max-w-full max-h-[90vh] rounded shadow-xl" />
-        <div class="flex justify-center mt-4 gap-2">
-            <button id="modal-prev" class="bg-white text-slate-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-200">
-            <i class="fas fa-chevron-left"></i>
+            
+            <!-- Botón Ver más -->
+            <button class="product-expand-btn w-full text-center mt-3 py-1 text-slate-700 border border-slate-200 rounded-md hover:bg-slate-50 transition">
+              Ver más <i class="fas fa-chevron-down"></i>
             </button>
-            <button id="modal-next" class="bg-white text-slate-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-200">
-            <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        </div>
-    </div>
-<!-- NOTIFICACIÓN DE ENVÍO GRATUITO (CENTRADA) -->
-<div id="free-delivery-notification" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50 opacity-0 pointer-events-none transition-opacity duration-500">
-  <div class="bg-white rounded-lg shadow-xl p-5 max-w-md mx-4 transform scale-95 transition-transform duration-500">
-    <div class="flex items-center justify-between mb-3">
-      <div class="flex items-center gap-2">
-        <div class="bg-slate-800 text-green-400 p-2 rounded-full">
-          <i class="fas fa-truck"></i>
-        </div>
-        <h3 class="text-lg font-bold text-slate-800">Envío Gratuito</h3>
+            <!-- Todo el contenido que quieres ocultar va dentro de este div -->
+            <div class="product-details mt-3">
+              <!-- Mini sección de reseñas específicas del producto -->
+              <div class="mb-3 bg-slate-50 rounded-lg p-2">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm font-semibold text-slate-700 mb-1">Opiniones <span class="text-xs text-slate-500">(32)</span></h4>
+                  <button class="text-xs text-slate-600 hover:text-slate-800 product-reviews-toggle">
+                    Ver todas <i class="fas fa-chevron-down ml-1"></i>
+                  </button>
+                </div>
+                
+                <!-- Reseñas del producto colapsables -->
+                <div class="product-reviews-content overflow-hidden" style="max-height: 100%; transition: max-height 0.3s ease-out;">
+                  <div class="space-y-2">
+                    <!-- Mini reseña 1 con foto -->
+                    <div class="border-b border-slate-200 pb-2">
+                      <div class="flex justify-between items-center">
+                        <p class="text-yellow-400 text-xs">★★★★★</p>
+                        <span class="text-xs text-slate-500">en 21 de marz 2025                      </span>
+                      </div>
+                      <div class="flex gap-2 mt-1">
+                        <div class="w-16 flex-shrink-0 relative">
+                          <img src="img/Base Líquida/reseñas/c8159229-fd58-4836-9e40-def4b4267b51.webp" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-1" />
+                        </div>
+                        <div class="flex-grow">
+                          <p class="text-xs text-slate-600 line-clamp-9">si tiene buena cobertura me gustó mucho </p>
+                          <p class="text-xs font-semibold text-slate-700 mt-1">Neryely Mora</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Mini reseña 2 con foto -->
+                    <div class="border-b border-slate-200 pb-2">
+                      <div class="flex justify-between items-center">
+                        <p class="text-yellow-400 text-xs">★★★★☆</p>
+                        <span class="text-xs text-slate-500">en 21 abr 2025</span>
+                      </div>
+                      <div class="flex gap-2 mt-1">
+                        <div class="w-16 flex-shrink-0 relative">
+                          <img src="img//Base Líquida/reseñas/videoframe_7266.png" class="w-16 h-16 object-cover cursor-pointer rounded review-img zoomable" data-review-id="review-2" />
+                        </div>
+                        <div class="flex-grow">
+                          <p class="text-xs text-slate-600 line-clamp-5">Pensé que sería demasiado claro, pero es exactamente el mismo tono que el mío 10/10. Además, es muy pigmentado y tiene un olor muy agradable. </p>
+                          <p class="text-xs font-semibold text-slate-700 mt-1">45***08                          </p><br><br><br>
+                        </div>
+                      </div>
+                    </div>
+                    <br><br><br>  </div>
+                </div>
+              </div>
+              
+       
+              <!-- Información de colores -->
+              <p class="text-sm mb-2 mt-3"><strong>Colores:</strong></p>
+              <div class="flex gap-2 mb-2">
+                <span class="color-box color-option" style="background-color: #a05e3f;"></span>
+             
+              </div>
+              <!-- Botón de WhatsApp -->
+              <a href="https://wa.link/52dozc" target="_blank" class="block bg-slate-800 text-white text-center mt-4 py-2 rounded-lg hover:bg-slate-700 ripple">
+                <i class="fab fa-whatsapp mr-2"></i> Pedir por WhatsApp
+              </a>
+            </div>
+          </div>
+    
+        
+      
+      
       </div>
-      <button id="close-notification" class="text-slate-500 hover:text-slate-800 transition-colors">
-        <i class="fas fa-times"></i>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="p-4 md:p-8 mt-8 bg-slate-100 rounded-lg">
+      <h2 class="text-xl font-bold mb-4 flex items-center">
+        <i class="fas fa-comment-alt mr-2 text-slate-600"></i> Lo que opinan nuestros clientes
+      </h2>
+      
+      <!-- Contenedor para las reseñas con controles de navegación -->
+      <div class="relative reviews-carousel">
+      
+        
+        <div class="flex overflow-x-auto space-x-4 pb-2 snap-x reviews-container">
+          <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
+            <div class="flex gap-3 mb-2 items-center">
+              <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
+                AP
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-800">Ana Pérez</h4>
+                <p class="text-yellow-400 text-sm">★★★★★</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">¡Me encantó la calidad de la blusa! El material es excelente y la entrega fue muy rápida. Definitivamente volveré a comprar.</p>
+          </div>
+          <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
+            <div class="flex gap-3 mb-2 items-center">
+              <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
+                LF
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-800">Luisa Fernández</h4>
+                <p class="text-yellow-400 text-sm">★★★★★</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">El envío fue rápido y el producto llegó tal como se ve en la foto. La talla fue perfecta siguiendo la guía que me enviaron. ¡Muy recomendado!</p>
+          </div>
+          <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
+            <div class="flex gap-3 mb-2 items-center">
+              <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
+                MG
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-800">María González</h4>
+                <p class="text-yellow-400 text-sm">★★★★☆</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Las blusas son hermosas y de buena calidad. La atención fue excelente. Solo le quito una estrella porque tardó un poco más de lo esperado en llegar.</p>
+          </div>
+          <div class="min-w-[280px] border rounded-lg p-4 flex-shrink-0 reseña bg-white hover:shadow-xl transition-all duration-300 snap-start">
+            <div class="flex gap-3 mb-2 items-center">
+              <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-white text-lg font-bold">
+                JR
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-800">Javier Rodríguez</h4>
+                <p class="text-yellow-400 text-sm">★★★★★</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">Compré un regalo para mi esposa y le encantó. La calidad es excelente y la atención personalizada fue genial.</p>
+          </div>
+        </div>
+        
+        
+        
+        <!-- Indicadores de página -->
+        <div class="flex justify-center mt-4 space-x-2 reviews-indicators">
+          <span class="w-2 h-2 rounded-full bg-slate-800"></span>
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+        </div>
+      </div>
+    </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-slate-900 text-white p-6 mt-8">
+          <div class="container mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+              <div class="flex items-center gap-2 mb-4 md:mb-0">
+              <div class="bg-white rounded-full p-1 w-10 h-10 flex items-center justify-center">
+                  <span class="text-slate-800 font-bold text-xl">E</span>
+              </div>
+              <h2 class="text-xl font-bold">Elegance</h2>
+              </div>
+              <div class="flex gap-4">
+              <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+              <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+              <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-tiktok text-xl"></i></a>
+              <a href="#" class="hover:text-slate-300 transition-colors"><i class="fab fa-whatsapp text-xl"></i></a>
+              </div>
+          </div>
+          <div class="border-t border-slate-700 pt-4 text-center text-sm text-slate-400">
+              <p>&copy; 2025 Elegance - Todos los derechos reservados</p>
+          </div>
+          </div>
+      </footer>
+
+      <!-- MODAL DE IMAGEN -->
+      <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+          <div class="relative max-w-screen-lg">
+          <button id="modal-close" class="absolute top-4 right-4 text-white text-2xl hover:text-gray-300">&times;</button>
+          <img id="modal-img" src="" class="max-w-full max-h-[90vh] rounded shadow-xl" />
+          <div class="flex justify-center mt-4 gap-2">
+              <button id="modal-prev" class="bg-white text-slate-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-200">
+              <i class="fas fa-chevron-left"></i>
+              </button>
+              <button id="modal-next" class="bg-white text-slate-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-slate-200">
+              <i class="fas fa-chevron-right"></i>
+              </button>
+          </div>
+          </div>
+      </div>
+  <!-- NOTIFICACIÓN DE ENVÍO GRATUITO (CENTRADA) -->
+  <div id="free-delivery-notification" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50 opacity-0 pointer-events-none transition-opacity duration-500">
+    <div class="bg-white rounded-lg shadow-xl p-5 max-w-md mx-4 transform scale-95 transition-transform duration-500">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <div class="bg-slate-800 text-green-400 p-2 rounded-full">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-800">Envío Gratuito</h3>
+        </div>
+        <button id="close-notification" class="text-slate-500 hover:text-slate-800 transition-colors">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <p class="text-slate-700 mb-4">¡Entregas a <span class="font-semibold">Pomalca</span> y <span class="font-semibold">Chiclayo</span> <span class="font-bold text-green-500">COMPLETAMENTE GRATIS</span>!</p>
+      <button id="accept-notification" class="w-full bg-slate-800 text-white py-2 rounded-md hover:bg-slate-700 transition-colors">
+        Entendido
       </button>
     </div>
-    <p class="text-slate-700 mb-4">¡Entregas a <span class="font-semibold">Pomalca</span> y <span class="font-semibold">Chiclayo</span> <span class="font-bold text-green-500">COMPLETAMENTE GRATIS</span>!</p>
-    <button id="accept-notification" class="w-full bg-slate-800 text-white py-2 rounded-md hover:bg-slate-700 transition-colors">
-      Entendido
-    </button>
   </div>
-</div>
-    <!-- BOTÓN WHATSAPP FLOTANTE -->
-    <div class="fixed bottom-6 right-6 z-30">
-        <a href="https://wa.link/wuotuq" target="_blank" class="block bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300">
-        <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+      <!-- BOTÓN WHATSAPP FLOTANTE -->
+      <div class="fixed bottom-6 right-6 z-30">
+          <a href="https://wa.link/wuotuq" target="_blank" class="block bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300">
+          <i class="fab fa-whatsapp"></i>
+          </a>
+      </div>
 
-    <script src="script.js"></script>
-    </body>
-    </html>
+      <script src="script.js"></script>
+      </body>
+      </html>
